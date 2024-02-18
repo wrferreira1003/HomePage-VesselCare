@@ -65,7 +65,31 @@
             
         .blinking-phone {
             animation: blink 3s linear infinite;
-        }       
+        }  
+        
+        .select2-selection__rendered {
+            background-color: transparent;
+            color: white;
+            border: none;
+        }
+        .select-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+        .select-wrapper select {
+            padding: 4px 8px; /* Ajuste conforme necessário para alinhar com outros elementos do formulário */
+            font-size: 16px; /* Ajuste conforme necessário */
+            color: white; /* Texto em branco */
+            background-color: black; /* Fundo preto */
+            cursor: pointer;
+            -webkit-appearance: none; /* Remove o estilo padrão para navegadores WebKit/Blink */
+            -moz-appearance: none; /* Remove o estilo padrão para Firefox */
+            appearance: none; /* Propriedade padrão, ainda com suporte limitado */
+            background-repeat: no-repeat;
+            background-position: right 10px center; /* Ajuste o posicionamento conforme necessário */
+            background-size: 12px; /* Ajuste o tamanho conforme necessário */
+            border-radius: 4px; /* Ajuste conforme o design do seu site */
+        }
        
     </style>
     
@@ -83,14 +107,13 @@
         <div class="header-upper" style="margin-right: 30px; margin-left: 30px; justify-content: space-between;">
             <div class="header-content" style="display: flex; justify-content: space-between; align-items: top; width: 100%;"> 
                 
-                <div id="polyglotLanguageSwitcher" style="position: relative;">
-                    <form>
-                        <select id="polyglot-language-options">
-                            <option id="en" value="en" selected>English</option>
-                            <option id="pt" value="pt">Português</option>
-                        </select>                      
-                    </form>
+                <div class="select-wrapper">
+                    <select id="polyglot-language-options" style="border: none; background-color: transparent;">
+                        <option id="en" value="en" selected>🇬🇧 English</option>
+                        <option id="pt" value="pt">🇧🇷 Português</option>
+                    </select>
                 </div>
+
 
                 <div class="phone-content" style="display: flex; flex-direction: column; align-items: right;">
                     <a target="_blank" href="https://wa.me/+19543308621" style="text-decoration: none; color: inherit; font-family: 'Spectral', serif; font-weight: 800; color: white;">
@@ -352,12 +375,22 @@
 
 
 
-
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
+
 <script>
+    $(document).ready(function() {
+        $('#polyglot-language-options').change(function() {
+            var language = $(this).val();
+            if (language === 'en') {
+                window.location.href = 'index.html';
+            } else if (language === 'pt') {
+                window.location.href = 'index_pt.html';
+            }
+        });
+    });
 
     $(document).ready(function() {
         $('form').on('submit', function(event) {

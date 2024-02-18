@@ -31,14 +31,67 @@
 }
 
 #polyglotLanguageSwitcher {
-	color: #fff !importent;
+	
 	line-height: normal;
 	position: relative; /* sets the initial position for the drop-down menu */	
 }
 
-#polyglotLanguageSwitcher form {
-	display: none;	
+select {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
+
+select:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+select:focus {
+    border-color: #007bff;
+}
+
+.language-switcher {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.selected-language {
+    padding: 5px 10px;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.language-list {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.language-list li {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.language-list li img {
+    margin-right: 10px;
+}
+.selected-language, .language-list li {
+    cursor: pointer;
+}
+
 
 /* ---------------------------------------------------------------------- */
 /* JS-created Code
@@ -50,7 +103,7 @@
     padding-left: 30px;
     background-repeat: no-repeat;
     background-position: 0px center;
-    color: white;
+    color: #5f6973;
     font-size: 15px;
     font-weight: 500;
     text-transform: capitalize;
@@ -78,10 +131,22 @@
     top: 4px;
     right: 8px;
 }
+#polyglotLanguageSwitcher span.trigger:before {
+    content: '\f107';
+    font-family: FontAwesome;
+    position: absolute;
+    color: #5f6973;
+    font-size: 16px;
+    top: 0px;
+    right:0;
+}
+
+
 
 #polyglotLanguageSwitcher a.current:hover span.trigger, #polyglotLanguageSwitcher a.current:active span.trigger, #polyglotLanguageSwitcher a.active span.trigger {
 	background-position: left bottom !important;
 }
+
 
 
 /* Drop-Down Menu */
@@ -143,9 +208,6 @@
 
 #es { 
 	background-image: url(../../assets/language-switcher/es.png);
-}
-#pt { 
-	background-image: url(../../assets/language-switcher/pt.png);
 }
 
 
