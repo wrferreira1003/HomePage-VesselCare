@@ -261,7 +261,7 @@
                     Não faça parte destas estatísticas!</h3>
             </div>
                 <!--Start Form-->
-                <form action="your-action" method="post" style="padding: 30px; border-radius: 5px; width: 100%;">
+                <form  action="https://formspree.io/f/meqygpyr" method="POST" style="padding: 30px; border-radius: 5px; width: 100%;">
                     <div class="row" style="display: flex; justify-content: space-between;">
                         <div class="col" style="width: 45%;">
                             <!--Start Column 1-->
@@ -355,7 +355,34 @@
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
 <script>
+
+    $(document).ready(function() {
+        $('form').on('submit', function(event) {
+            event.preventDefault();
+    
+            var formData = $(this).serialize();
+    
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function() {
+                    $('#success-message').show();
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = xhr.status + ': ' + xhr.statusText
+                    alert('Erro - ' + errorMessage);
+                    $('#error-message').show();
+                }
+            });
+        });
+    });
+    
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();

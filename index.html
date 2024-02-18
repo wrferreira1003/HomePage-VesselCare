@@ -258,7 +258,7 @@
                     Don't become part of these statistics!</h3>
             </div>
                 <!--Start Form-->
-                <form action="your-action" method="post" style="padding: 30px; border-radius: 5px; width: 100%;">
+                <form  action="https://formspree.io/f/meqygpyr" method="POST" style="padding: 30px; border-radius: 5px; width: 100%;">
                     <div class="row" style="display: flex; justify-content: space-between;">
                         <div class="col" style="width: 45%;">
                             <!--Start Column 1-->
@@ -280,6 +280,8 @@
             
                     <!-- Submit button -->
                     <button type="submit" class="thm-btn thm-bgclr1" style="background-color: #3B9BFD; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px;">SEND</button>
+                    <div id="success-message" style="display: none; color: green;">Mensagem enviada com sucesso!</div>
+                    <div id="error-message" style="display: none; color: red;">Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.</div>
                 </form>
                 <!--End Form-->
          
@@ -349,10 +351,37 @@
 <script src="assets/jquery-ui-1.11.4/jquery-ui.js"></script>
 
 
+
+
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 <script>
+
+    $(document).ready(function() {
+        $('form').on('submit', function(event) {
+            event.preventDefault();
+    
+            var formData = $(this).serialize();
+    
+            $.ajax({
+                url: $(this).attr('action'),
+                type: 'POST',
+                data: formData,
+                dataType: 'json',
+                success: function() {
+                    $('#success-message').show();
+                },
+                error: function(xhr, status, error) {
+                    var errorMessage = xhr.status + ': ' + xhr.statusText
+                    alert('Erro - ' + errorMessage);
+                    $('#error-message').show();
+                }
+            });
+        });
+    });
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
