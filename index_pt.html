@@ -283,6 +283,8 @@
             
                     <!-- Submit button -->
                     <button type="submit" class="thm-btn thm-bgclr1" style="background-color: #3B9BFD; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; margin-top: 20px;">ENVIAR</button>
+                    <div id="success-message" style="display: none; color: green;">Mensagem enviada com sucesso!</div>
+                    <div id="error-message" style="display: none; color: red;">Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente.</div>
                 </form>
                 <!--End Form-->
          
@@ -382,7 +384,7 @@
             });
         });
     });
-    
+
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
