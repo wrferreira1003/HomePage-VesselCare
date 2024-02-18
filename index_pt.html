@@ -80,7 +80,7 @@
                 
                 <div id="polyglotLanguageSwitcher" style="position: relative;">
                     <form>
-                        <select id="polyglot-language-options">
+                        <select>
                             <option id="en" value="en">English</option>
                             <option id="pt" value="pt" selected>Português</option>
                         </select>                      
@@ -364,13 +364,6 @@
                     behavior: 'smooth'
                 });
             }
-        });
-    });
-
-    $(document).ready(function() {
-        $('#polyglot-language-options').change(function() {
-            var lang = $(this).val();
-            window.location.href = 'index_' + lang + '.html';
         });
     });
 
