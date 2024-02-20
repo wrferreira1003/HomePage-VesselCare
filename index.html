@@ -33,6 +33,7 @@
         <script src="js/html5shiv.js"></script>
     <![endif]-->
 
+   
     <style>
         .titulo-embarcacao {
             font-size: 80px; /* Tamanho do texto */
@@ -45,7 +46,7 @@
         }
         @media (max-width: 500px) {
             .main-slider.style2 {
-                margin-top: 100px;
+                margin-top: 90px;
             }
         }
         .content {
@@ -72,25 +73,36 @@
             color: white;
             border: none;
         }
-        .select-wrapper {
-            position: relative;
-            display: inline-block;
-        }
-        .select-wrapper select {
-            padding: 4px 8px; /* Ajuste conforme necessário para alinhar com outros elementos do formulário */
-            font-size: 16px; /* Ajuste conforme necessário */
-            color: white; /* Texto em branco */
-            background-color: black; /* Fundo preto */
-            cursor: pointer;
-            -webkit-appearance: none; /* Remove o estilo padrão para navegadores WebKit/Blink */
-            -moz-appearance: none; /* Remove o estilo padrão para Firefox */
-            appearance: none; /* Propriedade padrão, ainda com suporte limitado */
-            background-repeat: no-repeat;
-            background-position: right 10px center; /* Ajuste o posicionamento conforme necessário */
-            background-size: 12px; /* Ajuste o tamanho conforme necessário */
-            border-radius: 4px; /* Ajuste conforme o design do seu site */
-        }
        
+        .btn.dropdown-toggle {
+            background: none;
+            color: #ffff; /* Altere para a cor que você deseja para o texto */
+            border: none;
+            padding-right: 0.1rem; /* Ajuste este valor para mover a seta */ 
+        }
+        
+        .btn.dropdown-toggle:active, .btn.dropdown-toggle:focus {
+            background: none;
+            box-shadow: none;
+            outline: none;
+        }
+        
+        .dropdown-menu {
+            background: none;
+            border: none;
+        }
+        
+        .dropdown-item {
+            color: #ffff; /* Altere para a cor que você deseja para o texto */
+        }
+        .selectpicker {
+            height: 10px; /* Ajuste este valor para alterar a altura do seletor */
+            line-height: 30px; /* Ajuste este valor para alinhar o texto verticalmente */
+        }
+        .bootstrap-select .btn.dropdown-toggle::after {
+            display: none;
+        }
+            
     </style>
     
 </head>
@@ -104,17 +116,12 @@
     <!-- main header -->
     <header class="main-header main-header-style2"> 
         <!--Start Header upper -->
-        <div class="header-upper" style="margin-right: 30px; margin-left: 30px; justify-content: space-between;">
+        <div class="header-upper" style="margin-right: 10px; margin-left: 10px; justify-content: space-between;">
             <div class="header-content" style="display: flex; justify-content: space-between; align-items: top; width: 100%;"> 
-                
-                <div class="select-wrapper">
-                    <select id="polyglot-language-options" style="border: none; background-color: transparent;">
-                        <option id="en" value="en" selected>🇬🇧 English</option>
-                        <option id="pt" value="pt">🇧🇷 Português</option>
-                    </select>
-                </div>
-
-
+                <select class="selectpicker" id="languageSelect">
+                    <option data-content='<img src="images/icon/unidos.png" alt="UK Flag"> English' value="en"></option>
+                    <option data-content='<img src="images/icon/brasil.png" alt="Brazil Flag"> Português' value="pt"></option>
+                </select>
                 <div class="phone-content" style="display: flex; flex-direction: column; align-items: right;">
                     <a target="_blank" href="https://wa.me/+19543308621" style="text-decoration: none; color: inherit; font-family: 'Spectral', serif; font-weight: 800; color: white;">
                         +1 (954) 330-8621
@@ -153,12 +160,12 @@
                             <div class="content">
                                 <div class="title thm-clr1" style="display: flex; justify-content: center; align-items: center;">
                                     <a>
-                                    <img src="images/slides/logo.png" alt="" title="">
+                                        <img src="images/slides/logo-white1.png" alt="" title="" style="width: 290px; height: 270px; margin-top:20px;">
                                     </a>
                                 </div>
                             
-                            <div class="big-title">Discover a new concept in vessel management.</div>   
-                        <div class="text">+ Reliability and Ease!</div>   
+                            <div class="big-title" style="color: #ffff;">Discover a new concept in vessel management.</div>   
+                            <div class="text" style="color: #0F3A6D; text-shadow: 2px 2px 4px #0F3A6E; font-weight: bold;">+ Reliability and Ease!</div>  
                     <div class="btn-box">
                                 <a href="#formulario">I want</a>
                             </div>        
@@ -172,12 +179,12 @@
                             <div class="content">
                                 <div class="title thm-clr1" style="display: flex; justify-content: center; align-items: center;">
                                     <a>
-                                    <img src="images/slides/logo.png" alt="" title="">
+                                        <img src="images/slides/logo-white1.png" alt="" title="" style="width: 290px; height: 270px; margin-top:20px;">
                                     </a>
                                 </div>
                             
-                            <div class="big-title">Discover a new concept in vessel management.</div>   
-                        <div class="text">+ Reliability and Ease!</div>   
+                            <div class="big-title" style="color: #ffff;">Discover a new concept in vessel management.</div>   
+                            <div class="text" style="color: #0F3A6D; text-shadow: 2px 2px 4px #0F3A6E; font-weight: bold;">+ Reliability and Ease!</div>  
                     <div class="btn-box">
                                 <a href="#formulario">I want</a>
                             </div>        
@@ -192,15 +199,14 @@
     <section class="fact-counter-area thm_bgclr3">
         <div class="container">
             <div class="row">
-
                 <!--Start Single Fact Counter-->
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" style="font-family: 'Spectral', serif;">
                     <div class="single-fact-counter text-left wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
                         <div class="count-box">
-                            <h1>
+                            <h1 style="position: z-index: 2;">
                                 <span class="timerr" data-from="1" data-to="40" data-speed="5000" data-refresh-interval="50">40</span><span>%</span>
                             </h1>
-                            <div class="icon" style="display: inline-block;">
+                            <div class="icon" style="display: inline-block; z-index: 1;">
                                 <img src="images/icon/vessel.png" alt="" style="width: 80px; height: auto;">
                             </div>
                         </div>
@@ -237,7 +243,7 @@
                                 <span style="font-family: 'Spectral', serif;" class="timerr" data-from="1" data-to="50" data-speed="5000" data-refresh-interval="50">50</span><span>%</span>
                             </h1>
                             <div class="icon" style="display: inline-block;">
-                                <img src="images/icon/manutencao.png" alt="" style="width: 80px; height: auto;">
+                                <img src="images/icon/manutencao.png" alt="" style="width: 80px;">
                             </div>
                         </div>
                         <div class="title">
@@ -252,7 +258,7 @@
                     <div class="single-fact-counter text-left wow fadeInLeft" data-wow-delay="400ms" data-wow-duration="1500ms">
                         <div class="count-box">
                             <h1 style="white-space: nowrap;">
-                                <span>$$$$$</span>
+                                <span>$$$$</span>
                             </h1>
                             <div class="icon" style="display: inline-block;">
                                 <img src="images/icon/rebout.png" alt="" style="width: 80px; height: auto;">
@@ -270,8 +276,11 @@
     <!--End Fact Counter Area--> 
     
     <!--Start forms-->
-    <section id='formulario' class="yachts-area style2" style="background-image:url(images/parallax-background/formsbackground.png); background-position:bottom right; background-size: 100%;">
-        <div class="icon-holder" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2500">
+    <section id='formulario' class="yachts-area style2" 
+            style="background-image:url(images/parallax-background/formsbackground.png); 
+            background-repeat: no-repeat; background-size: cover; min-height: 100vh;">
+        
+            <div class="icon-holder" data-aos="fade-left" data-aos-easing="linear" data-aos-duration="2500">
             <img src="images/icon/big-icon-3.png" alt="Icon">
         </div>
         <div class="container">
@@ -313,7 +322,7 @@
     <!--Start forms-->
     
      <!--Start Style2-->
-     <section class="discover-area style2" style="background-image:url(images/parallax-background/footer.jpg);">
+     <section class="discover-area style2" style="background-image:url(images/parallax-background/footer.jpg); min-height: 100vh; background-repeat: no-repeat; background-size: cover;">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12">
@@ -321,11 +330,12 @@
                         <div class="video-holder-box">
                             <div class="icon">
                                 <div class="inner">                      
-                                        <img src="images/slides/logo.png" alt="" title="" style="width: 313px; height: auto;">
+                                        <img src="images/slides/logo.png" alt="" title="" style="width: 283px; height: auto;">
                                 </div>   
                             </div>
                         </div>
-                        <h1 style="color: #0F3A6D; font-family: 'Rubik', sans-serif; text-shadow: 2px 2px 4px #0B2E57; font-size: 6vw; line-height: 1;">MAINTENANCE,<br> EASE,<br> RELIABILITY.</h1>
+                        <h1 style="margin-top:-50px; color: #0F3A6D; font-family: 'Rubik', sans-serif; text-shadow: 2px 2px 4px #0B2E57; line-height: 1; font-size:4rem;"
+                        >MAINTENANCE,<br> EASE, <br>RELIABILITY.</h1>
                     </div>    
                 </div>
             </div>
@@ -377,16 +387,33 @@
 
 <!-- thm custom script -->
 <script src="js/custom.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 
 <script>
+    $(window).resize(function() {
+        if ($(window).width() < 640) {
+            $('h1').css('font-size', '40px');
+        } else {
+            $('h1').css('font-size', '4rem');
+        }
+    });
+    
     $(document).ready(function() {
-        $('#polyglot-language-options').change(function() {
-            var language = $(this).val();
-            if (language === 'en') {
+        if ($(window).width() < 640) {
+            $('h1').css('font-size', '40px');
+        } else {
+            $('h1').css('font-size', '4rem');
+        }
+    });
+    
+    $(document).ready(function() {
+        $('#languageSelect').selectpicker();
+    
+        $('#languageSelect').change(function() {
+            var lang = $(this).val();
+            if (lang === 'en') {
                 window.location.href = 'index.html';
-            } else if (language === 'pt') {
+            } else if (lang === 'pt') {
                 window.location.href = 'index_pt.html';
             }
         });
