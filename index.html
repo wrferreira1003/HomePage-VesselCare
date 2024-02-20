@@ -102,6 +102,20 @@
         .bootstrap-select .btn.dropdown-toggle::after {
             display: none;
         }
+
+        .discover-area.style2::before {
+            content: "";
+            background-image: url(images/parallax-background/footer.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1;
+        }
             
     </style>
     
@@ -165,7 +179,7 @@
                                 </div>
                             
                             <div class="big-title" style="color: #ffff;">Discover a new concept in vessel management.</div>   
-                            <div class="text" style="color: #0F3A6D; text-shadow: 2px 2px 4px #0F3A6E; font-weight: bold;">+ Reliability and Ease!</div>  
+                            <div class="text" style="color: #0F3A6D; font-weight: bold;">+ Reliability and Ease!</div>  
                     <div class="btn-box">
                                 <a href="#formulario">I want</a>
                             </div>        
@@ -184,7 +198,7 @@
                                 </div>
                             
                             <div class="big-title" style="color: #ffff;">Discover a new concept in vessel management.</div>   
-                            <div class="text" style="color: #0F3A6D; text-shadow: 2px 2px 4px #0F3A6E; font-weight: bold;">+ Reliability and Ease!</div>  
+                            <div class="text" style="color: #0F3A6D; font-weight: bold;">+ Reliability and Ease!</div>  
                     <div class="btn-box">
                                 <a href="#formulario">I want</a>
                             </div>        
@@ -322,8 +336,8 @@
     <!--Start forms-->
     
      <!--Start Style2-->
-     <section class="discover-area style2" style="background-image:url(images/parallax-background/footer.jpg); min-height: 100vh; background-repeat: no-repeat; background-size: cover;">
-        <div class="container">
+     <section class="discover-area style2" style="position: relative; min-height: 100vh;">
+        <div class="container" >
             <div class="row">
                 <div class="col-xl-12">
                     <div class="discover-content text-center">
@@ -394,7 +408,7 @@
         if ($(window).width() < 640) {
             $('h1').css('font-size', '40px');
         } else {
-            $('h1').css('font-size', '4rem');
+            $('h1').css('font-size', '5rem');
         }
     });
     
@@ -402,7 +416,7 @@
         if ($(window).width() < 640) {
             $('h1').css('font-size', '40px');
         } else {
-            $('h1').css('font-size', '4rem');
+            $('h1').css('font-size', '5rem');
         }
     });
     
