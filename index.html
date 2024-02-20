@@ -39,25 +39,13 @@
             font-size: 80px; /* Tamanho do texto */
             color: #; /* Cor do texto */
         }
-        @media (max-width: 1139px) {
-            .main-slider.style2 {
-                margin-top: 80px;
-            }
-        }
+     
         @media (max-width: 500px) {
             .main-slider.style2 {
-                margin-top: 90px;
+                margin-top: 100px;
             }
         }
-        .content {
-            margin-top: -300px; /* Margem para telas maiores que 1139px */
-        }
-    
-        @media (max-width: 1139px) {
-            .content {
-                margin-top: -110px; /* Margem para telas menores que 1139px */
-            }
-        }
+     
         @keyframes blink {
             0% {opacity: 1;}
             50% {opacity: 0;}
@@ -101,6 +89,12 @@
         }
         .bootstrap-select .btn.dropdown-toggle::after {
             display: none;
+        }
+        @media (min-width: 1024px) {
+            .main-slider.style2 {
+                min-height:100vh ;
+                margin-top: -300px;
+            }
         }
 
             
@@ -204,10 +198,10 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12" style="font-family: 'Spectral', serif;">
                     <div class="single-fact-counter text-left wow fadeInLeft" data-wow-delay="100ms" data-wow-duration="1500ms">
                         <div class="count-box">
-                            <h1 style="position: z-index: 2;">
+                            <h1>
                                 <span class="timerr" data-from="1" data-to="40" data-speed="5000" data-refresh-interval="50">40</span><span>%</span>
                             </h1>
-                            <div class="icon" style="display: inline-block; z-index: 1;">
+                            <div class="icon" style="display: inline-block;">
                                 <img src="images/icon/vessel.png" alt="" style="width: 80px; height: auto;">
                             </div>
                         </div>

@@ -38,25 +38,7 @@
             font-size: 80px; /* Tamanho do texto */
             color: #; /* Cor do texto */
         }
-        @media (max-width: 1139px) {
-            .main-slider.style2 {
-                margin-top: 80px;
-            }
-        }
-        @media (max-width: 500px) {
-            .main-slider.style2 {
-                margin-top: 100px;
-            }
-        }
-        .content {
-            margin-top: -300px; /* Margem para telas maiores que 1139px */
-        }
-    
-        @media (max-width: 1139px) {
-            .content {
-                margin-top: -110px; /* Margem para telas menores que 1139px */
-            }
-        }
+
         @keyframes blink {
             0% {opacity: 1;}
             50% {opacity: 0;}
@@ -99,6 +81,13 @@
         }
         .bootstrap-select .btn.dropdown-toggle::after {
             display: none;
+        }
+
+        @media (min-width: 1024px) {
+            .main-slider.style2 {
+                min-height:100vh ;
+                margin-top: -300px;
+            }
         }
         
        
@@ -342,7 +331,7 @@
                         <div class="video-holder-box" style="margin-top: -10px;">
                             <div class="icon">
                                 <div class="inner">                      
-                                        <img src="images/slides/logo.png" alt="" title="" style="width: 283px; height: auto;">
+                                    <img src="images/slides/logo.png" alt="" title="" style="width: 290px; height: 270px; margin-top:20px;">
                                 </div>   
                             </div>
                         </div>
